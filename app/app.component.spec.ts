@@ -1,25 +1,25 @@
 /* tslint:disable:no-unused-variable */
-import { AppComponent } from './app.component';
+import { PonyRacerAppComponent } from './app.component';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 ////////  SPECS  /////////////
-describe('AppComponent', function () {
+describe('PonyRacerAppComponent', function () {
   let de: DebugElement;
-  let comp: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+  let comp: PonyRacerAppComponent;
+  let fixture: ComponentFixture<PonyRacerAppComponent>;
 
   beforeEach(async(() => {
    TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ PonyRacerAppComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(PonyRacerAppComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
   });
