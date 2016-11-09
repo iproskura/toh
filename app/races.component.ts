@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
+import { RaceService, FakeRaceService } from "./services/race.service";
 
 @Component({
   selector: 'ns-races',
-  template: `<h3>Races:</h3>
-<button (click)="refreshRaces()">Refresh races list</button>
-<div *ngIf="races.length > 0"><p>There is {{races.length}} races</p></div>
-<ul>
-  <li *ngFor="let race of races; let i=index">{{i+1}}: {{race.name}}</li>
-</ul>
-<input type="text" #name>
-<button (click)="name.focus()">Focus the input</button>
+  providers: [{provide: RaceService, useClass: FakeRaceService}],
+  template: `<p>{{list() | json}}</p>
 `
 })
 
 export class RacesComponent {
   races: any = [];
+
+  constructor(private raceService: RaceService){
+  }
+
+  list(){
+    return this.raceService.list();
+  }
 
   refreshRaces() {
     this.races = [

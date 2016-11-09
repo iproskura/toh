@@ -8,7 +8,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
     appRef => playWithInjector(appRef.injector)
   );
 
-function playWithInjector(inj){
+function playWithInjector(inj: any){
   console.log('playWithInjector(inj)');
   console.log(inj.get(RaceService));
   console.log(inj.get('RaceServiceToken'));

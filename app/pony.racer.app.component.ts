@@ -3,12 +3,12 @@ import { RaceService } from "./services/race.service";
 
 @Component({
   selector: 'ponyracer-app',
-  template: `
-    <h1>Hello pony racer</h1>
+  template: `    
+    <ns-greeting></ns-greeting>
     <h2>welcome: {{ user.name }}</h2>
     <ns-races></ns-races>
     <ns-ponies></ns-ponies>    
-    <p>{{list()[0].name}}</p>
+    <p>{{list() | json}}</p>
   `
 })
 export class PonyRacerAppComponent {
