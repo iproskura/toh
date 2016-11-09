@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 </ul>
 <input type="text" #name>
 <button (click)="name.focus()">Focus the input</button>
-
 `
 })
 
