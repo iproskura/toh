@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 <br><button (click)="refreshPonies()">Refresh</button>
 <ul>
   <li *ngFor="let pony of ponies; let isEven=even"
-      [style.color]="isEven ? 'green': 'black'">
+    [style.color]="isEven ? 'green': 'black'">
     {{pony.name}}  
   </li>
 </ul>`

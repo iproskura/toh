@@ -6,9 +6,12 @@ import { RacesComponent } from './races.component';
 import { PoniesComponent } from './pony.component';
 
 import { ApiService } from './services/api.service';
-import { RaceService } from './services/race.service';
+import { RaceService, FakeRaceService } from './services/race.service';
+
+const IS_PROD = true;
 
 @NgModule({
+
   imports: [BrowserModule],
   declarations: [
     PonyRacerAppComponent,
@@ -16,7 +19,14 @@ import { RaceService } from './services/race.service';
     PoniesComponent],
   providers: [
     ApiService,
-    RaceService
+    {
+      provide: RaceService,
+      useClass: IS_PROD ? RaceService : FakeRaceService
+    },
+    {
+      provide: 'RaceServiceToken',
+      useClass: RaceService
+    }
   ],
   bootstrap: [PonyRacerAppComponent]
 })

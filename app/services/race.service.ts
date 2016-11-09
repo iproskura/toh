@@ -7,6 +7,15 @@ export class RaceService {
   }
 
   list() {
-    return this.apiService.get('/races');
+    // return this.apiService.get('/races');
+    return [{name: 'true Londoner'}];
+  }
+}
+
+@Injectable()
+export class FakeRaceService{
+  list(){
+    console.log('FakeRaceService call');
+    return [{name: 'fake Londoner'}];
   }
 }
