@@ -1,5 +1,5 @@
 import { NgModule, EventEmitter } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { PonyRacerAppComponent } from './pony.racer.app.component';
 import { RacesComponent } from './races.component';
@@ -12,7 +12,9 @@ import { RaceService, FakeRaceService } from './services/race.service';
 import { FromNowPipe } from "./fromNow.Pipe";
 import { Pony } from "./interfaces/pony.interface";
 import { SimpleLogger } from "./directives/loggable.directive";
-//TODO import pony iface
+import { RaceServiceWithHttp } from "./services/race.service.http";
+
+//TODO import pony iface, TITLE through providers
 
 const IS_PROD = true;
 
@@ -29,6 +31,8 @@ const IS_PROD = true;
   ],
   providers: [
     ApiService,
+    Title,
+    RaceServiceWithHttp,
     {
       provide: RaceService,
       useClass: IS_PROD ? RaceService : FakeRaceService

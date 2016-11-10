@@ -3,9 +3,10 @@ import { Pony } from "./interfaces/pony.interface";
 
 @Component({
   selector: 'ns-ponies',
+  styles: ['.red {color: red;}'],
   template: `<div>
   <h2>Ponies</h2>
-  <ns-pony  *ngFor="let blah of ponies" [pony]="blah" (ponySelected)="betOnPony($event)"></ns-pony>
+  <ns-pony class="red" *ngFor="let blah of ponies" [pony]="blah" (ponySelected)="betOnPony($event)"></ns-pony>
 </div>
 `
 })
@@ -21,7 +22,7 @@ export class PoniesComponent {
   ];
 
   betOnPony(pony){
-    console.log('selecting pony', pony, event);
+    console.log('selecting pony', pony);
   }
 
   /*refreshPonies() {

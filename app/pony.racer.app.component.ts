@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RaceService } from "./services/race.service";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'ponyracer-app',
@@ -8,13 +9,14 @@ import { RaceService } from "./services/race.service";
     <h2>welcome: {{ user.name }}</h2>
     <ns-races></ns-races>
     <ns-ponies></ns-ponies>    
-    <p>{{list() | json}}</p>
-  `
+    <p>{{list() | json}}</p> `,
+  viewProviders: [Title]
 })
 export class PonyRacerAppComponent {
   user: any = {name: 'Cedr1L'};
 
-  constructor(private raceService: RaceService) {
+  constructor(private raceService: RaceService, title: Title) {
+    title.setTitle('Pooony racer');
   }
 
 
