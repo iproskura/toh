@@ -7,10 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class GreetingComponent {
-
   today: Date = new Date(2016, 4, 1 );
 
   asyncGreeting = new Promise(resolve => {
-    window.setTimeout(() => resolve('hello POONY'), 1500);
+    window.setTimeout(() => resolve('hello PONY'), 1500);
   })
 }

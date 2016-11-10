@@ -1,36 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from "@angular/core";
+import { Pony } from "./interfaces/pony.interface";
 
 @Component({
-  selector: 'ns-ponies',
-  template: `
-<br><button (click)="refreshPonies()">Refresh</button>
-<ul>
-  <li *ngFor="let pony of ponies | slice:0:size; let isEven=even"
-    [style.color]="isEven ? 'green': 'black'">
-    {{pony.name}}  
-  </li>
-</ul>
-
-<p>{{ponies | json}}</p>`
+  selector: 'ns-pony',
+  inputs: ['pony'],
+  outputs: ['ponySelected'],
+  template: `<div loggable [logText]="pony.name" (click)="selectPony()">{{pony.id}}: {{pony.name}}</div>`
 })
+export class PonyComponent {
+  // @Ouput() ponySelected = new EventEmitter<Pony();
+  // @Input() pony: Pony;
+  pony: Pony;
 
-export class PoniesComponent {
-  size: number = 2;
+  ponySelected = new EventEmitter<Pony>();
 
-  ponies: Array<any> = [
-    {name: 'Rainbow Dash'},
-    {name: 'Pinkie Pie'},
-    {name: 'Fluttery'},
-    {name: 'Rarity'},
-  ];
-
-  refreshPonies() {
-    this.ponies = [
-      {name: 'Fluttery'},
-      {name: 'Rarity'},
-      {name: 'Rainbow Dash'},
-      {name: 'Pinkie Pie'}
-    ];
+  selectPony() {
+    this.ponySelected.emit(this.pony);
   }
-
 }

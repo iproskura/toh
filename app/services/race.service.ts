@@ -15,7 +15,7 @@ export class RaceService {
 @Injectable()
 export class FakeRaceService{
   list(){
-    console.log('FakeRaceService call');
+    // console.log('FakeRaceService call');
     return [{name: 'fake Londoner'}];
   }
 }
