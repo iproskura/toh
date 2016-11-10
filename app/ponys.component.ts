@@ -21,7 +21,7 @@ export class PoniesComponent {
     {id: 4, name: 'Rarity'},
   ];
 
-  betOnPony(pony){
+  betOnPony(pony: Pony){
     console.log('selecting pony', pony);
   }
 

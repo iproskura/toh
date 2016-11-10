@@ -5,7 +5,7 @@ import { Directive } from "@angular/core";
   inputs: ['text: logText']
 })
 export class SimpleLogger {
-  set text(value) {
+  set text(value: string) {
     console.log('logger++ ', value);
   }
 }

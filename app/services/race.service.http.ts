@@ -6,6 +6,6 @@ export class RaceServiceWithHttp{
   constructor(private http: Http){}
 
   list(){
-    return this.http.ge('/api/races');
+    return this.http.get('/api/races');
   }
 }
