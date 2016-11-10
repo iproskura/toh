@@ -16,7 +16,7 @@ import { RaceServiceWithHttp } from "./services/race.service.http";
 
 //TODO import pony iface, TITLE through providers
 
-const IS_PROD = true;
+const IS_PROD:boolean = true;
 
 @NgModule({
   imports: [BrowserModule],
