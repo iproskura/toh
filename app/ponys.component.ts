@@ -7,12 +7,12 @@ import { Pony } from "./interfaces/pony.interface";
   template: `<div>
   <h2>Ponies</h2>
   <ns-pony class="red" *ngFor="let blah of ponies" [pony]="blah" (ponySelected)="betOnPony($event)"></ns-pony>
-</div>
+  </div>
 `
 })
 
 export class PoniesComponent {
-  size: number = 2;
+  size: number = 4;
 
   ponies: Array<Pony> = [
     {id: 1, name: 'Rainbow Dash'},

@@ -11,8 +11,6 @@ class Race implements Race {
 
 @Injectable()
 export class RaceService {
-  constructor() {
-  }
 
   list() {
     const race1 = new Race('London');
