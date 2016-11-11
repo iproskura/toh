@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from "./localStorage.service";
 
 
 class Race implements Race {
@@ -9,15 +10,22 @@ class Race implements Race {
   }
 }
 
+class FakeLocalStorage {
+  get() {
+    return [
+      {name: "Fake Lion"},
+      {name: 'Fake London'}
+    ];
+  }
+}
+
 @Injectable()
 export class RaceService {
-
+  constructor(private localStorage: LocalStorageService) {
+  }
   list() {
-    const race1 = new Race('London');
-    const race2 = new Race('Lyon');
-    return [race1, race2];
-
-    // return this.apiService.get('/races');
+    return this.localStorage.get('races');
+        // return [{name: 'RaceSrvc Londoner'}];
   }
 }
 

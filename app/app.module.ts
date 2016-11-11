@@ -14,6 +14,7 @@ import { Pony } from "./interfaces/pony.interface";
 import { Race } from "./interfaces/race.interface";
 import { SimpleLogger } from "./directives/loggable.directive";
 import { RaceServiceWithHttp } from "./services/race.service.http";
+import { LocalStorageService } from "./services/localStorage.service";
 
 //TODO import pony iface, TITLE through providers
 
@@ -33,6 +34,7 @@ const IS_PROD:boolean = true;
   providers: [
     ApiService,
     Title,
+    LocalStorageService,
     RaceServiceWithHttp,
     {
       provide: RaceService,

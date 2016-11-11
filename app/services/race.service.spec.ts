@@ -1,26 +1,27 @@
-import { TestBed, async } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing';
+import { LocalStorageService } from "./localStorage.service";
 import { RaceService } from "./race.service";
-import any = jasmine.any;
-// import { RaceService } from "./race.service";
-
-// import { Race } from '../interfaces/race.interface'
 
 describe('RaceService', () => {
-  let service: RaceService;
-
+  const localStorage = jasmine.createSpyObj('LocalStorageService', ['get']);
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [RaceService]
+
+    providers: [
+      {
+        provide: LocalStorageService,
+        useValue: localStorage
+      },
+      RaceService
+    ]
   }));
 
-  beforeEach(() => service = TestBed.get(RaceService));
+  it('should return 2 races from localStorage', () => {
+    localStorage.get.and.returnValue([{name: 'Lyon'}, {name: 'London'}]);
 
-  /*it('should return a promise of 2 races', async(() => {
-    service.list().then(races => {
-      expect(races.length).toBe(2);
-    });
-  }));*/
+    const service = TestBed.get(RaceService);
+    const races = service.list();
 
-  it('should return races when list() is called', () => {
-    expect(service.list().length).toBe(2);
+    expect(races.length).toBe(2);
+    expect(localStorage.get).toHaveBeenCalledWith('races');
   });
 });
