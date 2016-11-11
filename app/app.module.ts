@@ -13,6 +13,7 @@ import { FromNowPipe } from "./fromNow.Pipe";
 import { Pony } from "./interfaces/pony.interface";
 import { SimpleLogger } from "./directives/loggable.directive";
 import { RaceServiceWithHttp } from "./services/race.service.http";
+import { Race } from "./interfaces/race.interface";
 
 //TODO import pony iface, TITLE through providers
 
