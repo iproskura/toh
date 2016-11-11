@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from "./api.service";
 
 
 class Race implements Race {
@@ -18,13 +17,13 @@ export class RaceService {
   list() {
     const race1 = new Race('London');
     const race2 = new Race('Lyon');
+    return [race1, race2];
 
     // return this.apiService.get('/races');
-    return [race1, race2];
   }
 }
 
-
+//--------------------------------------------------
 @Injectable()
 export class FakeRaceService {
   list() {
