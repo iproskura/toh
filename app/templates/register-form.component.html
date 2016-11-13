@@ -1,4 +1,23 @@
 <h2>Sign up</h2>
-<form (ngSubmit)="register()">
+<form (ngSubmit)="register()" [formGroup]="userForm">
+  <div><label>Username</label><input formControlName="username"></div>
+  <div><label>password</label><input type="password" formControlName="password"></div>
+  <button type="submit">Submit</button>
+  <button (click)="reset()">Reset</button>
+</form>
+
+
+<!--
+<h2>Sign up</h2>
+<form (ngSubmit)="register()" #userForm="ngForm">
+  <div>
+    <label>Username</label><input name="username" [(ngModel)]="user.username">
+    <small>{{user.username}} is awesome</small>
+  </div>
+  <div>
+    <label>Password</label><input type="password" name="password" [(ngModel)]="user.password">
+    <small>{{user.password}} is pass</small>
+  </div>
   <button type="submit">Register</button>
 </form>
+-->

@@ -19,7 +19,11 @@ import { RegisterFormComponent } from "./register.form.component";
 const IS_PROD:boolean = true;
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   declarations: [
     PonyRacerAppComponent,
     RacesComponent,
