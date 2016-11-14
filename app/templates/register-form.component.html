@@ -36,7 +36,7 @@
     <label>password</label><input formControlName="password" type="password">
     <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">Password is required</div>
   </div>
-  <div><label></label><input type="date" formControlName="birthdate">
+  <div><label>Birthdate</label><input type="date" formControlName="birthdate">
     <div *ngIf="birthdateCtrl.dirty">
       <div *ngIf="birthdateCtrl.hasError('required')">Birth date is required</div>
       <div *ngIf="birthdateCtrl.hasError('tooYoung')">You are too young</div>
