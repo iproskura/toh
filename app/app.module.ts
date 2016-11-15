@@ -1,6 +1,7 @@
 import { NgModule, EventEmitter } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
 import { PonyRacerAppComponent } from './pony.racer.app.component';
 import { RacesComponent } from './races.component';
@@ -22,7 +23,8 @@ const IS_PROD:boolean = true;
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   declarations: [
     PonyRacerAppComponent,
