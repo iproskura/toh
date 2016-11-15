@@ -9,9 +9,17 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   );
 
 function playWithInjector(inj: any){
+<<<<<<< HEAD
   console.log('playWithInjector(inj)');
   console.log(inj.get(RaceService));
   console.log(inj.get('RaceServiceToken'));
   console.log(inj.get(RaceService) === inj.get(RaceService));
   console.log(inj.get(RaceService) === inj.get('RaceServiceToken'));
+=======
+  /*console.log('playWithInjector(inj)');
+  console.log(inj.get(RaceService));
+  console.log(inj.get('RaceServiceToken'));
+  console.log(inj.get(RaceService) === inj.get(RaceService));
+  console.log(inj.get(RaceService) === inj.get('RaceServiceToken'));*/
+>>>>>>> master
 }

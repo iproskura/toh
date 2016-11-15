@@ -1,0 +1,70 @@
+<style>
+  input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+    border-radius: 4px;
+  }
+  input.ng-pristine{
+    border: 1px solid #039be5;
+  }
+</style>
+
+<!-- template-driven -->
+<!--<h2>Sign up</h2>
+<form (ngSubmit)="register(userForm.value)" #userForm="ngForm">
+  <div>
+    <label >Username</label>
+    <input type="text" name="username" ngModel required #username="ngModel">
+    <div *ngIf="username.control.dirty && username.control.hasError('required')">username is required</div>
+  </div>
+  <div>
+    <label >password</label>
+    <input type="password" name="password" ngModel required #password="ngModel">
+    <div *ngIf="password.control.dirty && password.control.hasError('required')">password required</div>
+  </div>
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>-->
+
+<!-- code-driven -->
+<h2>Sign up</h2>
+<form (ngSubmit)="register()" [formGroup]="userForm">
+  <div>
+    <label>Username</label><input formControlName="username" type="text">
+    <div *ngIf="usernameCtrl.dirty && usernameCtrl.hasError('required')">username is required</div>
+    <div *ngIf="usernameCtrl.dirty && usernameCtrl.hasError('minlength')">Username.length min 3 chars</div>
+  </div>
+  <div>
+    <label>password</label><input formControlName="password" type="password">
+    <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">Password is required</div>
+  </div>
+  <div><label>BirthDate</label><input type="date" formControlName="birthdate">
+    <div *ngIf="birthdateCtrl.dirty">
+      <div *ngIf="birthdateCtrl.hasError('required')">Birth date is required</div>
+      <div *ngIf="birthdateCtrl.hasError('tooYoung')">You are too young</div>
+    </div>
+
+  </div>
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  <button (click)="reset()">Reset</button>
+</form>
+
+
+<!--
+<h2>Sign up</h2>
+<form (ngSubmit)="register()" #userForm="ngForm">
+  <div>
+    <label>Username</label><input name="username" [(ngModel)]="user.username">
+    <small>{{user.username}} is awesome</small>
+  </div>
+  <div>
+    <label>Password</label><input type="password" name="password" [(ngModel)]="user.password">
+    <small>{{user.password}} is pass</small>
+  </div>
+  <button type="submit">Register</button>
+</form>
+
+
+<div *ngIf="userForm.get('username').dirty &&
+      userForm.get('username').hasError('required')">username is required
+    </div>
+
+    [-->
