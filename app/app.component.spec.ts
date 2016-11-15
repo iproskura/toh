@@ -6,6 +6,7 @@ import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 ////////  SPECS  /////////////
+/*
 describe('PonyRacerAppComponent', function () {
   let de: DebugElement;
   let comp: AppComponent;
@@ -33,3 +34,4 @@ describe('PonyRacerAppComponent', function () {
       '<h1> should say something about "Angular"');
   });
 });
+*/
