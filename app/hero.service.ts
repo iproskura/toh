@@ -9,7 +9,7 @@ import { getUrlScheme } from "@angular/compiler";
 export class HeroService {
 
   private heroesUrl = 'app/heroes';  // URL to web api
-  private headers = new Headers({'Content-Type':'appliation/json'});
+  private headers = new Headers({'Content-Type': 'appliation/json'});
 
   constructor(private http: Http) {
   }
@@ -47,7 +47,7 @@ export class HeroService {
   }
 
 
-  create(name: string): Promise<Hero>{
+  create(name: string): Promise<Hero> {
     return this.http
       .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()

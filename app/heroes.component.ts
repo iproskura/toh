@@ -4,7 +4,6 @@ import { HeroService } from './hero.service';
 import { Router, PreloadAllModules } from "@angular/router";
 import { splitNsName } from "@angular/compiler/src/ml_parser/tags";
 
-
 @Component({
   moduleId: module.id,
   selector: 'my-heroes',
@@ -56,7 +55,9 @@ export class HeroesComponent implements OnInit {
       .delete(hero.id)
       .then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
-        if (this.selectedHero === hero) { this.selectedHero = null; }
+        if (this.selectedHero === hero) {
+          this.selectedHero = null;
+        }
       });
   }
 }
